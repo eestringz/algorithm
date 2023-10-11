@@ -29,7 +29,30 @@
  <p>각각의 테스트 케이스마다, 한 줄에 하나씩 g(N)를 출력한다.</p>
 
 ## 풀이
- <p>lst를 N 의 크기에 맞춰서 사용하면 모든 TESTCASE에서 각각 계산하므로, 시간복잡도가 크다.</p>
- <P>따라서 처음부터 lst의 크기를 MAX로 고정하고 하나의 lst만 사용하면서 마지막 출력값만 찾는다.</P>
+ <p>lst를 N 의 크기에 맞춰서 사용하면, 각 testcase마다 크기가 다른 배열을 반복적으로 생성하고 조작하기 때문에 계산 비용이 높아진다.</p>
+ <P>따라서 처음부터 lst의 크기를 MAX로 고정하고, 하나의 lst만 사용하면서 마지막에 각각 출력값만 찾는다.</P>
  <hr>
+ <p>이 방법도 가능하다.</p>
+ <p>import sys
+    input = sys.stdin.readline
+ 
+    n = int(input())
+    MAX = 1000000
+ 
+    dp = [1] * (MAX+1)
+    sum = [0] * (MAX+1)
+ 
+    for i in range(2, MAX+1):
+        j = 1
+        while (i*j <= MAX):
+            dp[i*j] += i
+            j += 1
+ 
+    for i in range(1, MAX+1):
+        sum[i] = sum[i-1] + dp[i]
+ 
+    for i in range(n):
+        x = int(input())
+        print(sum[x])
+</p> 
  
