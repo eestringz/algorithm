@@ -5,7 +5,11 @@ input = sys.stdin.readline
 
 def dfs(n, cnt):
     global ans
-    
+
+    # 끝까지 진행해도 결과 갱신 불가능.(가지치기)
+    if ans >= cnt + (N - n) * 2:  # cnt + (N-n)*2 는 결과 최댓값
+        return
+
     if n == N:  # 모든 계란을 들고 부딪히기 완료
         ans = max(ans, cnt)
         return
