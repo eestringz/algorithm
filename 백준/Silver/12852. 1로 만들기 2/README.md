@@ -38,7 +38,8 @@
 
 ### 📌 풀이
 <p>2차원 배열을 이용한 다른 풀이</p>
-```python
+
+```
 import sys
 input = sys.stdin.readline
 
@@ -59,6 +60,4 @@ for i in range(2, n + 1):
 
 print(dp[n][0])
 print(*reversed(dp[n][1]))
-```
-eorjpjper
 ```
