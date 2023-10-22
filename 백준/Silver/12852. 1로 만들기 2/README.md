@@ -60,3 +60,5 @@ for i in range(2, n + 1):
 print(dp[n][0])
 print(*reversed(dp[n][1]))
 ```
+eorjpjper
+```
