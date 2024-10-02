@@ -26,3 +26,11 @@
 
  <p><sub>n</sub>C<sub>m</sub>을 출력한다.</p>
 
+
+### 다른 풀이
+
+```
+import math
+
+print(math.comb(n, m))
+```
